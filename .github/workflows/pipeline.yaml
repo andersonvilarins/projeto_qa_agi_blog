@@ -6,3 +6,5 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Copiar os arquivos do repositório
+              uses: actions/checkout@v4.1.4
