@@ -6,10 +6,18 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Copiar os arquivos do repositório
+            - name: Copiar os arquivos do projeto
               uses: actions/checkout@v4.1.4
 
             - name: Instalar o python
               uses: actions/setup-python@v5
               with:
-                python-version: '3.11' 
+                python-version: '3.11'
+                
+            - name: Instalar as Bibliotecas do projeto
+              run: |
+                  pip install -r requirements.txt
+                
+            - name: Execução dos testes 
+              run: |
+                 robot -d results tests
