@@ -5,7 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
-
+# Arquivos de imagem
+*.png
+*.jpeg
+*.gif
 # Distribution / packaging
 .Python
 build/
@@ -31,6 +34,26 @@ MANIFEST
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+
+# Logs e relatórios do Robot Framework
+log.html
+report.html
+output.xml
+*.log
+
+
+# Configurações do Visual Studio Code
+.vscode/
+
+# Arquivos de execução
+*.exe
+.exe
+
+# Arquivos de excel
+*.xlsx
+*.xls
+*.xml
+*.csv
 
 # Installer logs
 pip-log.txt
