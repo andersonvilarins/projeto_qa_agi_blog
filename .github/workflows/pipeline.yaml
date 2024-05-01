@@ -1,0 +1,8 @@
+name: Pipleline
+on: [push, pull_request]
+
+jobs:
+    test_robot:
+        runs-on: ubuntu-latest
+
+        steps:
