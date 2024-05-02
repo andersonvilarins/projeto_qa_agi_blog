@@ -8,7 +8,7 @@ Library    pyautogui
 
 
 *** Variables ***
-${lupa_pesquisa}            //*[@id="ast-desktop-header"]/div[1]/div/div/div/div[3]/div[2]/div/div
+${lupa_pesquisa}            (//div[contains(@class,'ast-search-menu-icon slide-search')])
 ${input_pesquisa}           //input[contains(@type,'search')]
 ${resultado_encontrado}     //section[contains(@class,'ast-archive-description')]
 ${primeiro_artigo}          (//div[contains(@class,'ast-post-format')])[1]
@@ -24,8 +24,8 @@ Inserir no campo a pesquisa desejada
     pyautogui.Press    keys=enter
 Aguardar o resultado da pesquisa
     Wait Until Element Is Visible    locator=${resultado_encontrado}
-    Validar a página após o resultado da consulta
     builtin.Sleep    2  
+    Validar a página após o resultado da consulta
 
 Clicar no primeiro artigo da lista
     Click Element    locator=${primeiro_artigo}
