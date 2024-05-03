@@ -4,6 +4,7 @@ on: [push, pull_request]
 jobs:
     test_robot:
         runs-on: ubuntu-latest
+        permissions: write-all
 
         steps:
             - name: Copiar os arquivos do projeto
@@ -40,3 +41,18 @@ jobs:
                   path: ./results
                   if-no-files-found: ignore
                   retention-days: 2
+
+            - name: Resultado do Download
+              if: always()
+              uses: actions/download-artifact@v1
+              with:
+                name: resultado dos testes
+
+            - name: Enviar relatorio
+              if: always()
+              uses: joonvena/robotframework-reporter-action@v2
+              with:
+                report_path: resultado dos testes
+                gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+                
+
