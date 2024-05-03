@@ -17,8 +17,6 @@ jobs:
 
             - name: Instalar o NodeJS
               uses: actions/setup-node@v4
-              with:
-                node-version: '18'
                 
             - name: Instalar as Bibliotecas do projeto
               run: |
@@ -50,9 +48,10 @@ jobs:
 
             - name: Enviar relatorio
               if: always()
-              uses: joonvena/robotframework-reporter-action@v2
+              uses: joonvena/robotframework-reporter-action@v2.4
               with:
                 report_path: resultado dos testes
                 gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+                show_passed_tests: false
                 
 
