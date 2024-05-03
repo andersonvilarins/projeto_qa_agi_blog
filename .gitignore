@@ -5,6 +5,10 @@ __pycache__/
 
 # C extensions
 *.so
+
+# Diretórios
+node_modules/
+browser/
 # Arquivos de imagem
 *.png
 *.jpeg
@@ -40,7 +44,7 @@ log.html
 report.html
 output.xml
 *.log
-
+playwright-log.txt
 
 # Configurações do Visual Studio Code
 .vscode/

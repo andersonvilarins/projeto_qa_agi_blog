@@ -1,21 +1,19 @@
 *** Settings ***
 Documentation       Arquivo responsável por armazenar as informações globais do ambiente
 
-Library    SeleniumLibrary
-Library    pyautogui
+Library    Browser
 
 *** Variables ***
+${browser}     chromium
+${headless}    ${true}
 ${url_base}            https://blogdoagi.com.br/
 ${pagina_inicial}      (//span[@class='menu-text'][contains(.,'O Agibank')])[1]
 
 *** Keywords ***
 Acessar o blog do Agibank
-    Open Browser    ${url_base}    browser=chrome    #options=add_argument("--headless")
-    Maximize Browser Window
-# Verificar se estou na página inicial do blog
-#     Wait Until Element Is Visible    locator=${pagina_inicial}
+    New Browser    browser=${browser}
+    ...            headless=${headless}
     
-Fechar o navegador
-    # Set Screenshot Directory    path=results
-    # Capture Page Screenshot
-    Close Browser
+    New Context    viewport={'width': 1200, 'height': 900}
+    New Page       url=${url_base}
+    
