@@ -19,7 +19,7 @@ jobs:
               with:
                 python-version: '3.11'
 
-            - name: Instalar o NodeJS
+            - name: Instalar o Node JS
               uses: actions/setup-node@v4
                 
             - name: Instalar as Bibliotecas do projeto
@@ -52,7 +52,7 @@ jobs:
             
             - name: Relatório de envio
               if: always()
-              uses: joonvena/robotframework-reporter-action@v2.4
+              uses: joonvena/robotframework-reporter-action@v2.1
               with:
                 report_path: resultado dos testes ${{matrix.browser}}
                 gh_access_token: ${{ secrets.GITHUB_TOKEN }}
