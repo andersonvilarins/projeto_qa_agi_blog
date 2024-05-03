@@ -13,11 +13,21 @@ jobs:
               uses: actions/setup-python@v5
               with:
                 python-version: '3.11'
+
+            - name: Instalar o NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: '18'
                 
             - name: Instalar as Bibliotecas do projeto
               run: |
-                  pip install -r requirements.txt
-                
+                  python -m pip install --upgrade pip
+                  pip install -U -r requirements.txt
+                  sudo npm install @playwright/test
+                  sudo npx playwright install-deps
+                  rfbrowser init
+
+
             - name: Execução dos testes 
               run: |
-                 robot -d results tests
+                 robot -d ./results -v HEADLESS:true tests
