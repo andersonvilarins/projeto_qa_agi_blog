@@ -1,4 +1,4 @@
-name: Pipleline
+name: Pipleline Blog Agi Bank
 on: [push, pull_request]
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
 
             - name: Execução dos testes 
               run: |
-                 robot -d ./results -v HEADLESS:true BROWSER${{matrix.browser}} tests
+                 robot -d ./results -v HEADLESS:true -v BROWSER${{matrix.browser}} tests
 
             - name: Upload das evidências de teste
               if: always()
