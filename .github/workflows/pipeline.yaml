@@ -3,8 +3,12 @@ on: [push, pull_request]
 
 jobs:
     test_robot_blogAGI:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         permissions: write-all
+        strategy:
+          matrix:
+            browser: [chromiun, firefox, webkit]
+          fail-fast: false
 
         steps:
             - name: Copiar os arquivos do projeto
@@ -29,29 +33,29 @@ jobs:
 
             - name: Execução dos testes 
               run: |
-                 robot -d ./results -v HEADLESS:true tests
+                 robot -d ./results -v HEADLESS:true BROWSER${{matrix.browser}} tests
 
             - name: Upload das evidências de teste
               if: always()
               uses: actions/upload-artifact@v3
               with: 
-                  name: resultado dos testes
+                  name: resultado dos testes ${{matrix.browser}}
                   path: ./results
                   if-no-files-found: ignore
                   retention-days: 2
 
-            - name: Resultado do Download
+            - name: Download do resultado dos testes
               if: always()
               uses: actions/download-artifact@v1
               with:
-                name: resultado dos testes
+                name: resultado dos testes ${{matrix.browser}}
 
-            - name: Enviar relatorio
-              if: always()
-              uses: joonvena/robotframework-reporter-action@v2.4
-              with:
-                report_path: resultado dos testes
-                gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-                show_passed_tests: false
+            # - name: Enviar relatorio
+            #   if: always()
+            #   uses: joonvena/robotframework-reporter-action@v2.4
+            #   with:
+            #     report_path: resultado dos testes ${{matrix.browser}}
+            #     gh_access_token: ${{ secrets.GITHUB_TOKEN }}
+            #     show_passed_tests: false
                 
 
