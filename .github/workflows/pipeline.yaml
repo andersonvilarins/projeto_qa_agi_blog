@@ -2,8 +2,8 @@ name: Pipleline
 on: [push, pull_request]
 
 jobs:
-    test_robot:
-        runs-on: ubuntu-latest
+    test_robot_blogAGI:
+        runs-on: ubuntu-20.04
         permissions: write-all
 
         steps:
