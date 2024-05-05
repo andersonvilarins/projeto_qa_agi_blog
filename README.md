@@ -45,7 +45,10 @@ Utilizar um ambiente virtual como `venv` permite:
 
 - **VSCode:** Editor de código utilizado para o desenvolvimento do projeto.
 - **Robot Framework:** Framework de automação de testes.
+<div align="center">
 <img src="![download](https://github.com/andersonvilarins/projeto_qa_agi_blog/assets/972596/c22d150a-4672-4c09-98b8-b670c37038f0)" width="300"/>
+</div>
+<br>
 - **Playwright:** Utilizado através da biblioteca "browser" para automatizar interações no navegador.
 
 ## Estrutura de Diretórios
