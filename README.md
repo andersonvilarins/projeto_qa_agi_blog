@@ -77,7 +77,7 @@ O projeto está organizado nos seguintes diretórios:
 * Realizar pesquisa de artigos relacionados a um tema específico
 * Acessar o primeiro artigo da lista de pesquisa
 
-## Integração Contínua (CI) com GitHub Actions
+## Integração Contínua (CI) com GitHub Actions <img align= "center" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" />
 
 O arquivo `.yaml` configurado para a pipeline do GitHub Actions automatiza a execução dos testes e outras verificações a cada push ou pull request, garantindo que todas as alterações estejam de acordo com os padrões de qualidade esperados.
 
