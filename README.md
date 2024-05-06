@@ -1,5 +1,5 @@
 # projeto_qa_agi_blog
-Projeto de Automação de Testes para o Blog do Agi  Este repositório contém um projeto de automação de testes desenvolvido, em robot framework, como parte do processo seletivo para uma vaga de QA Sênior. O objetivo é demonstrar a capacidade de criar testes automatizados para cenários em um ambiente de blog real.
+Projeto de Automação de Testes para o Blog do Agi  Este repositório contém um projeto de automação de testes desenvolvido, em robot framework, como parte do processo seletivo para uma vaga de QA Sênior. O objetivo é demonstrar a capacidade de criar testes automatizados para realizar pesquisas dentro do bloh.
 
 ## Configuração do Ambiente Virtual com `venv`
 
@@ -42,14 +42,24 @@ Utilizar um ambiente virtual como `venv` permite:
 - **Facilidade de replicação:** Facilita a criação de um ambiente de desenvolvimento consistente em diferentes máquinas.
 
 ## Ferramentas e Tecnologias Utilizadas
-
 - **VSCode:** Editor de código utilizado para o desenvolvimento do projeto.
-- **Robot Framework:** Framework de automação de testes.
-<div align="center">
-<img src="![download](https://github.com/andersonvilarins/projeto_qa_agi_blog/assets/972596/c22d150a-4672-4c09-98b8-b670c37038f0)" width="300"/>
-</div>
-<br>
-- **Playwright:** Utilizado através da biblioteca "browser" para automatizar interações no navegador.
+-  <img align= "center" height="30" width="40" src=https://www.svgrepo.com/show/374049/robotframework.svg /> **Robot Framework:** Framework de automação de testes.
+- <img align= "center" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" />**Playwright:** Utilizado através da biblioteca "browser" para automatizar interações no navegador.
+  
+## Instalação de Bibliotecas e dependências do Projeto
+Para instalar as dependências necessárias para o projeto, você precisará seguir os passos abaixo. Certifique-se de que o ambiente virtual está ativado antes de prosseguir com a instalação das bibliotecas.
+* Instalação das Dependências:
+Com o ambiente virtual ativado, utilize o seguinte comando para instalar todas as bibliotecas listadas no arquivo requirements.txt:
+```
+    pip install -r requirements.txt
+```
+## Verificação da Instalação
+* Após a instalação das bibliotecas e dependências do projeto, verifique se tudo foi instaldo corretamente no seu ambiente com o seguinte comando:
+  ```
+    pip list
+  ```
+Este comando mostrará todas as bibliotecas instaladas junto com suas respectivas versões, permitindo que você confira se todas as dependências necessárias estão corretamente instaladas.
+Seguir estes passos garantirá que o ambiente de desenvolvimento esteja configurado corretamente e pronto para a execução e desenvolvimento do projeto.
 
 ## Estrutura de Diretórios
 
@@ -60,6 +70,10 @@ O projeto está organizado nos seguintes diretórios:
     - `validar_paginas/`: Armazena screenshots das páginas durante a execução dos testes.
 	
 - `tests/`: Contém o arquivo .robot que irá realizar a execução dos testes.
+
+## Cenários de testes
+* Realizar pesquisa de artigos relacionados a um tema específico
+* Acessar o primeiro artigo da lista de pesquisa
 
 ## Integração Contínua (CI) com GitHub Actions
 
